@@ -6,11 +6,9 @@ const mongoose = require('mongoose');
 
 const connectionURL = process.env.MONGO_DB_URL
 
-const databaseName = 'objects-detection-database';
-
 mongoose.connect
 (
-  connectionURL+"/"+databaseName,
+  connectionURL,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
