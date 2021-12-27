@@ -1,0 +1,28 @@
+{
+  "name": "ionic-objects-detection",
+  "version": "0.0.1",
+  "author": "Aitha Tarun",
+  "scripts": {      
+    "start:server": "node server.js"
+  },
+
+  "private": true,
+
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
+    "mongoose": "^6.1.2",
+    "mongoose-unique-validator": "^3.0.0",
+    "multer": "^1.4.4",
+    "request": "^2.88.2",
+  },
+
+   "engines":
+	{
+	  "node": "14.x"	
+	},
+  
+  "description": "An Ionic project"
+}
