@@ -3,6 +3,7 @@ const Prediction = require('../models/prediction');
 const jwt = require('jsonwebtoken');
 
 const httpRequest = require('request');
+const {throwError} = require("rxjs");
 
 exports.uploadPrediction = async (request, response, next)=>
 {
@@ -126,5 +127,38 @@ exports.fetchPredictions = async (request, response, next)=>
 
 exports.deletePrediction = async (request, response, next)=>
 {
+  try
+  {
+    const result = await Prediction.deleteOne
+    (
+      {
+        _id: request.body.id
+      }
+    );
 
+    if (result.deletedCount === 1)
+    {
+      return response.status(201).send
+      (
+        {
+          message: 'Deleted Prediction Successfully'
+        }
+      );
+    }
+    else
+    {
+      throwError("No Prediction Found");
+    }
+  }
+  catch (error)
+  {
+    console.log(error)
+
+    return response.status(500).send
+    (
+      {
+        message: 'Error while deleting prediction'
+      }
+    );
+  }
 }
