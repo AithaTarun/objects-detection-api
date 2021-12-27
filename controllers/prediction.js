@@ -3,7 +3,6 @@ const Prediction = require('../models/prediction');
 const jwt = require('jsonwebtoken');
 
 const httpRequest = require('request');
-const {throwError} = require("rxjs");
 
 exports.uploadPrediction = async (request, response, next)=>
 {
@@ -147,7 +146,7 @@ exports.deletePrediction = async (request, response, next)=>
     }
     else
     {
-      throwError("No Prediction Found");
+      throw new Error("No Prediction Found");
     }
   }
   catch (error)
