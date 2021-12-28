@@ -87,4 +87,7 @@ app.use("/api/user", userRoutes);
 const predictionRoutes = require('./routes/prediction');
 app.use("/api/prediction", predictionRoutes);
 
+const reviewRoutes = require('./routes/review');
+app.use("/api/review", reviewRoutes);
+
 module.exports = app;
