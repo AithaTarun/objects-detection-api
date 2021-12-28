@@ -48,6 +48,11 @@ try
         (
           'Access-Control-Allow-Origin', process.env.FRONT_END_URL
         );
+        
+        response.setHeader
+        (
+          'Access-Control-Allow-Origin', 'http://localhost:8100'
+        );
 
         response.setHeader
         (
